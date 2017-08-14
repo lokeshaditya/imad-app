@@ -23,7 +23,7 @@ body {
 .container{
     max-width:800px;
     margin:0 auto;
-    color:black;
+    color:gray;
     font-family:sans-serif;
     padding:30px;
 }
