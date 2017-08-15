@@ -49,7 +49,7 @@ function createTemp(data){
 }
 
 app.get('/article1', function (req, res){
-    res.send(createtemp(article1));
+    res.send(createTemp(article1));
 });
 
 app.get('/article3', function (req, res){
