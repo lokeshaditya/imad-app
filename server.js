@@ -29,6 +29,16 @@ var article2 = {
             <p> this is the content in the page article two this is the content in the page article two this is the content in the page article two</p>`
 };
 
+var article3 = {
+    title :' Article3',
+    heading: 'Welcome to page3',
+    date: 'aug 20th, 2017',
+    content: `
+           
+            <p> this is the content in the page article three this is the content in the page article three this is the content in the page article three</p>
+            <p> this is the content in the page article three this is the content in the page article three this is the content in the page article three</p>
+            <p> this is the content in the page article three this is the content in the page article three this is the content in the page article three</p>`
+};
 
 function createTemp(data){
     var title = data.title;
@@ -64,7 +74,7 @@ app.get('/article1', function (req, res){
 });
 
 app.get('/article3', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article3.html'));
+    res.send(createTemp(article3));
 });
 
 app.get('/article2', function (req, res){
