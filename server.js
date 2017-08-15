@@ -9,8 +9,47 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var article1 = {
+    title :' Article1',
+    heading: 'Welcome to page1',
+    date: 'aug 15th, 2017',
+    content: `
+            <p> this is the content in the page article one   this is the content in the page article one   this is the content in the page article one</p>
+            <p> this is the content in the page article one   this is the content in the page article one   this is the content in the page article one</p>
+            <p> this is the content in the page article one</p>`
+};
+
+function createTemp(data){
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    
+    var htmltemp =
+    `<html>
+          <head>
+            <title>${title}</title>
+            <link href="/ui/style.css" rel="stylesheet"/>
+          </head>
+          
+          <body>
+            <h1>${heading}</h1>
+            <a href="/">HOME</a>
+            <a href="/article2">Page2</a>
+            <a href="/article3">Page3</a>
+            <h2>${date}</h2>
+            <div class="container">
+                ${content}           
+            </div>
+            
+          </body>
+    </html>`
+    
+    return htmltemp;
+}
+
 app.get('/article1', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article1.html'));
+    res.send(createtemp(article1));
 });
 
 app.get('/article3', function (req, res){
