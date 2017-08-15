@@ -19,6 +19,17 @@ var article1 = {
             <p> this is the content in the page article one</p>`
 };
 
+var article2 = {
+    title :' Article2',
+    heading: 'Welcome to page2',
+    date: 'aug 10th, 2017',
+    content: `
+            <p> this is the content in the page article two this is the content in the page article two this is the content in the page article two</p>
+            <p> this is the content in the page article two this is the content in the page article two this is the content in the page article two</p>
+            <p> this is the content in the page article two this is the content in the page article two this is the content in the page article two</p>`
+};
+
+
 function createTemp(data){
     var title = data.title;
     var heading = data.heading;
@@ -57,7 +68,7 @@ app.get('/article3', function (req, res){
 });
 
 app.get('/article2', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
+    res.send(createTemp(article2));
 });
 
 app.get('/ui/style.css', function (req, res) {
